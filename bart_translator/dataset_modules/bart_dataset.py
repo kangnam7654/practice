@@ -14,8 +14,7 @@ class BartDataset(Dataset):
         self.tokenizer = tokenizer
 
     def __len__(self):
-        # return len(self.data)
-        return 10000
+        return len(self.data)
 
     def __getitem__(self, idx):
         data = self.data[idx]
@@ -57,7 +56,7 @@ def main():
     word = "<s>I am a cat."
     tokenizer = BartTokenizer.from_pretrained("facebook/bart-base")
     tokenized = tokenizer.encode_plus(word, max_length=30, padding="max_length", add_special_tokens=False)
-    pass
+
     
 
 if __name__ == "__main__":
